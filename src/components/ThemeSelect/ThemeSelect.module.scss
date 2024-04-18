@@ -1,0 +1,53 @@
+.container {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+    border: 1px solid black;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: .5rem;
+    outline: none;
+    gap: 1rem
+}
+
+.value {
+    flex-grow: 1;
+}
+
+.caret {
+    border: 0.25rem solid transparent;
+    border-top-color: #000;
+}
+
+.options {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    border: 1px solid black;
+    border-radius: .5rem;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-color);
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.options.show {
+    display: block;
+}
+
+.option {
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+        background-color: var(--primary-color);
+    }
+}
+

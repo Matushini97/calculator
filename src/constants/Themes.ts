@@ -1,0 +1,1 @@
+export const Themes = ['Light', 'Dark', 'Colored'] as const;

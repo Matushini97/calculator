@@ -1,0 +1,23 @@
+.button {
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 6px 15px;
+    border: 1px solid black;
+}
+
+.numPad {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.2rem;
+    background-color: var(--inverted-secondary-color);
+}
+
+.clear {
+    background-color: var(--secondary-color);
+    border-radius: 0.2rem;
+}
+
+.themeSwitcher {
+    background-color: var(--secondary-color);
+    border-radius: 0.2rem;
+}
