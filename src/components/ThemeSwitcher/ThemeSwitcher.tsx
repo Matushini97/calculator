@@ -1,7 +1,7 @@
 import { ButtonTheme } from "../../constants/ButtonOptions";
 import { classNames } from "../../utils/classNames";
-import { Theme } from "../../utils/themeContext";
-import { useTheme } from "../../utils/useTheme";
+import { Theme, ThemeTitles } from "../../utils/themeContext";
+import { useTheme } from "../../hooks/useTheme";
 import Button from "../Button/Button"
 
 type ThemeSwitcherProps = {
@@ -11,9 +11,7 @@ type ThemeSwitcherProps = {
 
 const ThemeSwitcher = ({ className, newTheme }: ThemeSwitcherProps) => {
     const { toggleTheme } = useTheme();
-
-    const themeTitle = newTheme === Theme.LIGHT ? 'Light' : newTheme === Theme.DARK ? 'Dark' : 'Colored';
-
+    const themeTitle = ThemeTitles[newTheme];
     return (
         <Button
             theme={ButtonTheme.THEME}

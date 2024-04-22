@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Theme } from "../../utils/themeContext";
 import s from "./ThemeSelect.module.scss";
 import { classNames } from "../../utils/classNames";
-type ThemeLabels = "Light" | "Dark" | "Colored";
+export type ThemeLabels = "Light" | "Dark" | "Colored";
 export type SelectOption = {
     label: ThemeLabels;
     value: Theme;
@@ -36,15 +36,15 @@ export const ThemeSelect = ({ options, value, onChange, className }: ThemeSelect
                 <span>{value.label} Theme</span>
                 <div className={classNames(s.caret, {}, [])}></div>
                 <ul className={classNames('', {}, [s.options, isOpen ? s.show : ''])}>
-                    {leftOptions.map(option => (
+                    {leftOptions.map(({ label, value }) => (
                         <li
-                            key={option.label}
+                            key={label}
                             className={classNames('', {}, [s.option])}
                             onClick={() => {
-                                selectOption(option.value)
+                                selectOption(value)
                             }}
                         >
-                                {option.label} Theme
+                                {label} Theme
                         </li>
                     ))}
                 </ul>

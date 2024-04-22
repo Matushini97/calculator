@@ -14,19 +14,24 @@ export const enum RouteLinkNames {
     SETTINGS = 'Settings',
 }
 
-export const RoutePath: Record<AppRoutes, string> = {
+type RoutePath = {
+    label: string;
+    path: string;
+}
+
+export const RoutePaths: Record<AppRoutes, RoutePath> = {
     // Header
-    [AppRoutes.HOME]: '/',
-    [AppRoutes.SETTINGS]: '/settings',
+    [AppRoutes.HOME]: {label: RouteLinkNames.HOME, path: '/'},
+    [AppRoutes.SETTINGS]: {label: RouteLinkNames.SETTINGS, path: '/settings'},
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.HOME]: {
-        path: RoutePath.home,
+        path: RoutePaths.home.path,
         element: <HomePage />,
     },
     [AppRoutes.SETTINGS]: {
-        path: RoutePath.settings,
+        path: RoutePaths.settings.path,
         element: <SettingsPage />,
     },
 };

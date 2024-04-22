@@ -1,9 +1,8 @@
 import { ButtonTheme } from "../../constants/ButtonOptions";
 import { ThemeOptions } from "../../constants/ThemeOptions";
-import { Themes } from "../../constants/Themes";
 import { classNames } from "../../utils/classNames";
-import { Theme } from "../../utils/themeContext";
-import { useTheme } from "../../utils/useTheme";
+import { ThemeTitles } from "../../utils/themeContext";
+import { useTheme } from "../../hooks/useTheme";
 import Button from "../Button/Button";
 import { SelectOption, ThemeSelect } from "../ThemeSelect/ThemeSelect";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
@@ -11,11 +10,10 @@ import s from "./Settings.module.scss"
 
 type SettingsProps = {
     className?: string;
-  }
+}
 export const Settings = ({ className }: SettingsProps) => {
     const { theme, toggleTheme } = useTheme();
-    const themeLabel = theme === Theme.LIGHT ? 'Light' : theme === Theme.DARK ? 'Dark' : 'Colored';
-    const themeValue: SelectOption = {label: themeLabel, value: theme}
+    const themeValue: SelectOption = {label: ThemeTitles[theme], value: theme}
     return (
         <div className={classNames('', {}, [className, s.settings])}>
             <h2 className={classNames('', {}, [className, s.text])}>Settings</h2>
@@ -27,14 +25,13 @@ export const Settings = ({ className }: SettingsProps) => {
                 onChange={theme => toggleTheme(theme)}
             />
             <div className={classNames('', {}, [s.themeButtons, className])}>
-                {Themes.map((theme) => (
+                {ThemeOptions.map(({ value }) => (
                     <ThemeSwitcher
-                    key={theme}
-                    className={classNames('', {}, [className])}
-                    newTheme={theme === 'Light' ? Theme.LIGHT : theme === 'Dark' ? Theme.DARK : Theme.COLORED}
+                        key={value}
+                        className={classNames('', {}, [className])}
+                        newTheme={value}
                     />
                 ))}
-
             </div>
             <Button
                 theme={ButtonTheme.CLEAR}
@@ -43,7 +40,6 @@ export const Settings = ({ className }: SettingsProps) => {
                     Clear All History
             </Button>
             </div>
-        
         </div>
     );
 }
