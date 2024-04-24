@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Theme } from "../../utils/themeContext";
+import { Theme } from "../../providers/themeProvider/themeContext";
 import s from "./ThemeSelect.module.scss";
 import { classNames } from "../../utils/classNames";
 export type ThemeLabels = "Light" | "Dark" | "Colored";

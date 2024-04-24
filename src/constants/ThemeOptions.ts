@@ -1,5 +1,5 @@
 import { SelectOption } from "../components/ThemeSelect/ThemeSelect";
-import { Theme } from "../utils/themeContext";
+import { Theme } from "../providers/themeProvider/themeContext";
 
 export const ThemeOptions: SelectOption[] = [
     { label: 'Light', value: Theme.LIGHT },

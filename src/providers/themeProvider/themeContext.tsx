@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ThemeLabels } from "../components/ThemeSelect/ThemeSelect";
+import { ThemeLabels } from "../../components/ThemeSelect/ThemeSelect";
 
 type ThemeTitles = {
     [key in Theme]: ThemeLabels;

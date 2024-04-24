@@ -8,18 +8,18 @@ return (
         <h1 className={s.text}>Calculator App</h1>
         <div className={s.links}>
             {Object.values(RoutePaths).map(
-                (routePath) => {
+                ({ label, path }) => {
                     return (
                         <NavLink
-                            key={routePath.path}
-                            to={routePath.path}
+                            key={path}
+                            to={path}
                             className={({ isActive }) =>
                                 isActive
                                     ? `${s.activeLink} ${s.link}`
                                         : s.link
                             }
                             >
-                            {routePath.label}
+                            {label}
                         </NavLink>                    )
                 }
             )}

@@ -1,6 +1,6 @@
 import { ButtonTheme } from "../../constants/ButtonOptions";
 import { classNames } from "../../utils/classNames";
-import { Theme, ThemeTitles } from "../../utils/themeContext";
+import { Theme, ThemeTitles } from "../../providers/themeProvider/themeContext";
 import { useTheme } from "../../hooks/useTheme";
 import Button from "../Button/Button"
 

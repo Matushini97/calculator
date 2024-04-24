@@ -2,13 +2,14 @@
     padding: 2rem 5rem;
     display: grid;
     grid-template-columns: 1fr 200px;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr auto;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
     .itemOne {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        border-bottom: 1px solid var(--primary-color);
     }
 
     .itemTwo {
@@ -18,5 +19,7 @@
     .itemThree {
         grid-column: 2 / 3;
         grid-row: 1 / 3;
+        border-left: 1px solid var(--primary-color);
+        overflow: hidden;
     }
 }
