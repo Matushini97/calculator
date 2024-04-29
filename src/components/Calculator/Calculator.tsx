@@ -8,10 +8,10 @@ export const Calculator = () => {
     const {state, dispatch} = useCalculator();
     const { expression, history } = state;
     return (
-        <div className={s.container}>
-            <div className={s.itemOne}><Screen expression={expression}/></div>
-            <div className={s.itemTwo}><NumPad dispatch={dispatch}/></div>
-            <div className={s.itemThree}><History history={history}/></div>
-        </div>
+        <main className={s.container}>
+            <section className={s.itemOne}><Screen expression={expression}/></section>
+            <section className={s.itemTwo}><NumPad dispatch={dispatch}/></section>
+            <section className={s.itemThree}><History history={history}/></section>
+        </main>
     );
 };

@@ -4,9 +4,9 @@ import { RoutePaths } from "../../constants/routeConfig";
 
 const Header = () => {
 return (
-    <div className={s.navbar}>
+    <header className={s.navbar}>
         <h1 className={s.text}>Calculator App</h1>
-        <div className={s.links}>
+        <nav className={s.links}>
             {Object.values(RoutePaths).map(
                 ({ label, path }) => {
                     return (
@@ -23,8 +23,8 @@ return (
                         </NavLink>                    )
                 }
             )}
-        </div>
-    </div>
+        </nav>
+    </header>
 )
 }
 

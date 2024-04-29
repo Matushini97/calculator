@@ -7,9 +7,9 @@ type ScreenProps = {
 
 export const Screen = ({ expression}: ScreenProps) => {
     return (
-        <div className={classNames('', {}, [s.screen])}>
+        <section className={classNames('', {}, [s.screen])}>
             {expression}
-        </div>
+        </section>
     );
 }
 

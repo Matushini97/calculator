@@ -10,7 +10,7 @@ type NumPadType = {
 
 export const NumPad = ({dispatch}: NumPadType) => {
     return (
-        <div className={s.container}>
+        <section className={s.container}>
             {ButtonsList.map(({ symbol, action }) => {
                 return (
                     <Button
@@ -21,6 +21,6 @@ export const NumPad = ({dispatch}: NumPadType) => {
                         {symbol}
                     </Button>
                 )})}
-        </div>
+        </section>
     )
 }
