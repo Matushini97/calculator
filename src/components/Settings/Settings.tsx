@@ -8,7 +8,7 @@ import { SelectOption, ThemeSelect } from "../ThemeSelect/ThemeSelect";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import s from "./Settings.module.scss"
 import { useCalculator } from "../../hooks/useCalculator";
-import { ActionType } from "../Calculator/Calculator";
+import { ActionType } from "../../providers/calculatorProvider/calculatorReducer";
 
 type SettingsProps = {
     className?: string;

@@ -10,6 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     size?: ButtonSize;
     disabled?: boolean;
     children?: ReactNode;
+    symbol?: string;
 }
 
 const Button = memo((props: ButtonProps) => {
@@ -20,6 +21,7 @@ const Button = memo((props: ButtonProps) => {
         square,
         disabled,
         size = ButtonSize.M,
+        symbol: digit,
         ...otherProps
     } = props;
 
@@ -29,14 +31,14 @@ const Button = memo((props: ButtonProps) => {
         [s[size]]: true,
         [s.disabled]: disabled,
     };
-
-    return (
+    const isDigit = digit ? digit : children;
+        return (
         <button
             className={classNames(s.button, mods, [className])}
             disabled={disabled}
             {...otherProps}
         >
-            {children}
+            {isDigit}
         </button>
     );
 });

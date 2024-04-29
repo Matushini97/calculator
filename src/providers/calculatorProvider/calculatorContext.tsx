@@ -1,15 +1,11 @@
 import { createContext } from "react";
-import { ActionType } from "../../components/Calculator/Calculator";
+import { ACType } from "./calculatorReducer";
 
-export type CalculatorStateType = {expression: string, history: string[]}
-export type PayLoadType = {type: ActionType, payload?: string|number}
+export type CalculatorStateType = { expression: string, history: string[] }
 export type CalculatorContextProps = {
-    state?: CalculatorStateType;
-    dispatch?: React.Dispatch<{
-        type: ActionType;
-        payload: PayLoadType;
-    }>
+    state: CalculatorStateType;
+    dispatch: React.Dispatch<ACType>
 }
 
 
-export const CalculatorContext = createContext<CalculatorContextProps>({});
+export const CalculatorContext = createContext<CalculatorContextProps>({} as CalculatorContextProps);
